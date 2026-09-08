@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#7AC11F" />
+  <title>Multielectronic Salamanca · Tecnología, Seguridad y Climatización</title>
+  <meta name="description" content="Multielectronic Salamanca: venta e instalación de tecnología, cámaras de seguridad, aire acondicionado, servicio técnico y tintas e impresión. Atendemos Salamanca y zonas cercanas." />
+  <meta name="keywords" content="multielectronic, salamanca, cámaras de seguridad, aire acondicionado, climatización, servicio técnico, tintas, impresión, tecnología, IV región" />
+  <meta name="author" content="Multielectronic Salamanca" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Multielectronic Salamanca" />
+  <meta property="og:description" content="Tecnología, seguridad, climatización y servicio técnico en Salamanca." />
+  <meta property="og:image" content="logo.jpg" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon (usamos el logo) -->
+  <link rel="icon" type="image/jpeg" href="logo.jpg" />
+
+  <style>
+    /* ====== VARIABLES ====== */
+    :root {
+      --verde: #7AC11F;
+      --verde-oscuro: #5A9A14;
+      --verde-claro: #E8F5D6;
+      --negro: #0F0F0F;
+      --gris-oscuro: #2A2A2A;
+      --gris: #6B6B6B;
+      --gris-claro: #F5F5F5;
+      --blanco: #FFFFFF;
+      --sombra: 0 10px 30px rgba(0,0,0,0.08);
+      --sombra-hover: 0 20px 40px rgba(0,0,0,0.12);
+      --radio: 14px;
+      --max-width: 1200px;
+    }
+
+    /* ====== RESET ====== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--negro);
+      line-height: 1.6;
+      background: var(--blanco);
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font-family: inherit; font-size: 1rem; }
+
+    /* ====== UTILIDADES ====== */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    .section {
+      padding: 5rem 0;
+    }
+    .section-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: var(--gris);
+      max-width: 640px;
+      margin: 0 auto 3rem;
+      font-size: 1.05rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.75rem;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      text-align: center;
+    }
+    .btn-primary {
+      background: var(--verde);
+      color: var(--blanco);
+    }
+    .btn-primary:hover {
+      background: var(--verde-oscuro);
+      transform: translateY(-2px);
+      box-shadow: var(--sombra-hover);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--blanco);
+      border: 2px solid var(--blanco);
+    }
+    .btn-outline:hover {
+      background: var(--blanco);
+      color: var(--negro);
+    }
+    .btn-wsp {
+      background: #25D366;
+      color: var(--blanco);
+    }
+    .btn-wsp:hover {
+      background: #1DA851;
+      transform: translateY(-2px);
+      box-shadow: var(--sombra-hover);
+    }
+
+    /* ====== HEADER ====== */
+    .header {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      z-index: 100;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .brand img {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+    .brand-name {
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: -0.01em;
+    }
+    .brand-sub {
+      font-size: 0.78rem;
+      color: var(--gris);
+    }
+    .nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .nav a {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--gris-oscuro);
+      transition: color 0.2s;
+    }
+    .nav a:hover { color: var(--verde); }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--negro);
+      margin: 5px 0;
+      transition: 0.3s;
+    }
+
+    /* ====== HERO ====== */
+    .hero {
+      background: linear-gradient(135deg, #0F0F0F 0%, #1F1F1F 100%);
+      color: var(--blanco);
+      padding: 5rem 0 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(122,193,31,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(122,193,31,0.15);
+      color: var(--verde);
+      padding: 0.4rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(122,193,31,0.3);
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 .verde { color: var(--verde); }
+    .hero p {
+      font-size: 1.1rem;
+      color: #C5C5C5;
+      margin-bottom: 2rem;
+      max-width: 540px;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-image img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 24px;
+      box-shadow: 0 30px 60px rgba(122,193,31,0.3);
+      transform: rotate(-5deg);
+      transition: transform 0.4s;
+    }
+    .hero-image img:hover {
+      transform: rotate(0deg) scale(1.05);
+    }
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .stat strong {
+      display: block;
+      font-size: 1.6rem;
+      color: var(--verde);
+      font-weight: 800;
+    }
+    .stat span {
+      font-size: 0.85rem;
+      color: #999;
+    }
+
+    /* ====== SERVICIOS ====== */
+    .servicios {
+      background: var(--gris-claro);
+    }
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .card {
+      background: var(--blanco);
+      border-radius: var(--radio);
+      padding: 2rem;
+      box-shadow: var(--sombra);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--sombra-hover);
+    }
+    .card-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--verde-claro);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      color: var(--verde-oscuro);
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .card p {
+      color: var(--gris);
+      font-size: 0.95rem;
+    }
+
+    /* ====== POR QUÉ ELEGIRNOS ====== */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    .feature {
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .feature-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--verde);
+      color: var(--blanco);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    .feature h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .feature p {
+      color: var(--gris);
+      font-size: 0.9rem;
+    }
+
+    /* ====== GALERÍA / TRABAJOS ====== */
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .galeria-item {
+      position: relative;
+      border-radius: var(--radio);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+      box-shadow: var(--sombra);
+      background: #1a1a1a;
+    }
+    .galeria-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .galeria-item:hover img {
+      transform: scale(1.08);
+    }
+    .galeria-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 60%);
+      display: flex;
+      align-items: flex-end;
+      padding: 1.25rem;
+      transition: background 0.3s;
+    }
+    .galeria-overlay span {
+      color: var(--blanco);
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+    }
+    .galeria-badge {
+      position: absolute;
+      top: 0.8rem;
+      left: 0.8rem;
+      background: var(--verde);
+      color: var(--blanco);
+      padding: 0.3rem 0.7rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .galeria-disclaimer {
+      text-align: center;
+      color: var(--gris);
+      font-size: 0.85rem;
+      margin-top: 1.5rem;
+      font-style: italic;
+    }
+
+    /* ====== CONTACTO ====== */
+    .contacto {
+      background: var(--gris-claro);
+    }
+    .contacto-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .contacto-info h2 {
+      font-size: clamp(1.75rem, 4vw, 2.3rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .contacto-info p {
+      color: var(--gris);
+      margin-bottom: 2rem;
+    }
+    .info-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+    .info-item-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--verde);
+      color: var(--blanco);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .info-item-text strong {
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .info-item-text a:hover { color: var(--verde); }
+
+    .form-card {
+      background: var(--blanco);
+      border-radius: var(--radio);
+      padding: 2.5rem;
+      box-shadow: var(--sombra);
+    }
+    .form-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .form-card .desc {
+      color: var(--gris);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .form-group {
+      margin-bottom: 1.1rem;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1.5px solid #E0E0E0;
+      border-radius: 10px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      background: var(--blanco);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--verde);
+      box-shadow: 0 0 0 3px rgba(122,193,31,0.15);
+    }
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-submit {
+      width: 100%;
+      background: var(--negro);
+      color: var(--blanco);
+      padding: 1rem;
+      border-radius: 10px;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .form-submit:hover {
+      background: var(--verde);
+      transform: translateY(-2px);
+    }
+    .form-note {
+      font-size: 0.8rem;
+      color: var(--gris);
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    /* ====== FOOTER ====== */
+    .footer {
+      background: var(--negro);
+      color: #999;
+      padding: 3rem 0 1.5rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .footer h5 {
+      color: var(--blanco);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 1rem;
+    }
+    .footer-brand img {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+    }
+    .footer-brand strong {
+      color: var(--blanco);
+      font-size: 1.05rem;
+    }
+    .footer ul { list-style: none; }
+    .footer li { margin-bottom: 0.5rem; font-size: 0.9rem; }
+    .footer a:hover { color: var(--verde); }
+    .footer-bottom {
+      border-top: 1px solid #2A2A2A;
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    /* ====== WHATSAPP FLOTANTE ====== */
+    .wsp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      color: var(--blanco);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+      z-index: 99;
+      transition: transform 0.3s;
+    }
+    .wsp-float:hover {
+      transform: scale(1.1);
+    }
+    .wsp-float::after {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      background: rgba(37,211,102,0.4);
+      animation: pulse 2s infinite;
+      z-index: -1;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.4); opacity: 0; }
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero p { margin-left: auto; margin-right: auto; }
+      .hero-ctas { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero-image { order: -1; }
+      .hero-image img { width: 200px; height: 200px; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .features { grid-template-columns: repeat(2, 1fr); }
+      .contacto-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .section { padding: 3.5rem 0; }
+      .nav { display: none; }
+      .nav.open {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--blanco);
+        flex-direction: column;
+        padding: 1rem 1.25rem;
+        gap: 1rem;
+        border-top: 1px solid rgba(0,0,0,0.06);
+        box-shadow: var(--sombra);
+      }
+      .menu-toggle { display: block; }
+      .features { grid-template-columns: 1fr; }
+      .galeria { grid-template-columns: 1fr 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .form-card { padding: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== HEADER ====== -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#inicio" class="brand">
+        <img src="logo.jpg" alt="Multielectronic Salamanca" />
+        <div class="brand-text">
+          <span class="brand-name">Multielectronic</span>
+          <span class="brand-sub">Salamanca</span>
+        </div>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#trabajos">Trabajos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+        <a href="https://wa.me/56931053539?text=Hola%2C%20necesito%20una%20cotizaci%C3%B3n" class="btn btn-primary" style="padding:0.6rem 1.2rem; font-size:0.9rem;">
+          Cotizar ahora
+        </a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero" id="inicio">
+    <div class="container hero-inner">
+      <div>
+        <span class="hero-tag">⚡ Salamanca · IV Región</span>
+        <h1>Soluciones en <span class="verde">tecnología</span>, seguridad y climatización.</h1>
+        <p>Vendemos, instalamos y damos servicio técnico a cámaras de seguridad, aire acondicionado, equipos tecnológicos y mucho más. Atención cercana y profesional.</p>
+        <div class="hero-ctas">
+          <a href="https://wa.me/56931053539?text=Hola%2C%20necesito%20una%20cotizaci%C3%B3n" class="btn btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+          <a href="#contacto" class="btn btn-outline">Formulario</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong>+5</strong><span>áreas de servicio</span></div>
+          <div class="stat"><strong>100%</strong><span>atención personalizada</span></div>
+          <div class="stat"><strong>24h</strong><span>respuesta por WhatsApp</span></div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="logo.jpg" alt="Logo Multielectronic Salamanca" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SERVICIOS ====== -->
+  <section class="section servicios" id="servicios">
+    <div class="container">
+      <h2 class="section-title">Nuestros servicios</h2>
+      <p class="section-subtitle">Todo lo que tu hogar o empresa necesita en tecnología, seguridad y climatización, en un solo lugar.</p>
+      <div class="grid grid-3">
+
+        <div class="card">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Tecnología</h3>
+          <p>Venta y asesoría de equipos tecnológicos: notebooks, PCs, periféricos, componentes y accesorios. Te ayudamos a elegir lo que realmente necesitas.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          </div>
+          <h3>Cámaras de Seguridad</h3>
+          <p>Instalación profesional de sistemas de CCTV para hogares y empresas. Cámaras HD, DVR/NVR, acceso remoto desde tu celular y garantía real.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h2"/><path d="M20 12h2"/><path d="M12 2v2"/><path d="M12 20v2"/><circle cx="12" cy="12" r="4"/><path d="M2 12a10 10 0 0 1 20 0"/></svg>
+          </div>
+          <h3>Aire Acondicionado</h3>
+          <p>Venta, instalación y mantención de aire acondicionado split y window. Te dejamos el equipo funcionando perfecto antes del verano.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3>Servicio Técnico</h3>
+          <p>Reparación y mantención de equipos electrónicos, computacionales y de climatización. Diagnóstico honesto y precios justos.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          </div>
+          <h3>Tintas e Impresión</h3>
+          <p>Venta de tintas originales y alternativas, tóners y cartuchos. Recargas y suministros para tu impresora particular o de oficina.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Asesoría a domicilio</h3>
+          <p>Vamos hasta tu hogar o empresa en Salamanca y alrededores. Evaluamos el espacio y te entregamos una cotización sin compromiso.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== POR QUÉ ELEGIRNOS ====== -->
+  <section class="section" id="nosotros">
+    <div class="container">
+      <h2 class="section-title">¿Por qué elegir Multielectronic?</h2>
+      <p class="section-subtitle">Atención local, profesional y transparente. Sin sorpresas.</p>
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h4>Servicio garantizado</h4>
+          <p>Trabajos con garantía real. Si algo falla, lo resolvemos.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h4>Atención local</h4>
+          <p>Estamos en Salamanca. Vamos a tu domicilio sin recargos ocultos.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h4>Respuesta rápida</h4>
+          <p>Te respondemos por WhatsApp el mismo día, en horario hábil.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h4>Precios justos</h4>
+          <p>Cotización previa sin compromiso. Te explicamos cada cobro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TRABAJOS / GALERÍA ====== -->
+  <section class="section" id="trabajos">
+    <div class="container">
+      <h2 class="section-title">Algunos de nuestros servicios</h2>
+      <p class="section-subtitle">Imágenes referenciales de los trabajos y soluciones que entregamos día a día en Salamanca y la IV Región.</p>
+
+      <div class="galeria">
+
+        <div class="galeria-item">
+          <img src="img/camaras.jpg" alt="Sistema de cámaras de seguridad" loading="lazy" />
+          <div class="galeria-badge">Seguridad</div>
+          <div class="galeria-overlay">
+            <span>Sistemas de CCTV</span>
+          </div>
+        </div>
+
+        <div class="galeria-item">
+          <img src="img/aire.svg" alt="Aire acondicionado - instalación y mantención" loading="lazy" />
+          <div class="galeria-badge">Climatización</div>
+          <div class="galeria-overlay">
+            <span>Aire acondicionado</span>
+          </div>
+        </div>
+
+        <div class="galeria-item">
+          <img src="img/computador.jpg" alt="Servicio técnico de computadores" loading="lazy" />
+          <div class="galeria-badge">Servicio técnico</div>
+          <div class="galeria-overlay">
+            <span>Reparación de equipos</span>
+          </div>
+        </div>
+
+        <div class="galeria-item">
+          <img src="img/laptop.jpg" alt="Equipos tecnológicos" loading="lazy" />
+          <div class="galeria-badge">Tecnología</div>
+          <div class="galeria-overlay">
+            <span>Venta de equipos</span>
+          </div>
+        </div>
+
+        <div class="galeria-item">
+          <img src="img/impresora.jpg" alt="Tintas e impresión" loading="lazy" />
+          <div class="galeria-badge">Impresión</div>
+          <div class="galeria-overlay">
+            <span>Tintas y tóners</span>
+          </div>
+        </div>
+
+        <div class="galeria-item">
+          <img src="img/redes.jpg" alt="Redes y cableado estructurado" loading="lazy" />
+          <div class="galeria-badge">Redes</div>
+          <div class="galeria-overlay">
+            <span>Redes y conectividad</span>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="galeria-disclaimer">
+        📸 Pronto subiremos fotos de instalaciones reales realizadas por nuestro equipo.
+      </p>
+    </div>
+  </section>
+
+  <!-- ====== CONTACTO ====== -->
+  <section class="section contacto" id="contacto">
+    <div class="container contacto-grid">
+
+      <div class="contacto-info">
+        <h2>¿Conversamos?</h2>
+        <p>Cuéntanos qué necesitas y te respondemos a la brevedad. También puedes escribirnos directo a WhatsApp.</p>
+
+        <div class="info-item">
+          <div class="info-item-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div class="info-item-text">
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/56931053539">+56 9 3105 3539</a>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-item-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="info-item-text">
+            <strong>Email</strong>
+            <a href="mailto:contacto@multielectronic.cl">contacto@multielectronic.cl</a>
+            <small style="color:var(--gris); display:block; font-size:0.85rem;">(cambia este correo en el HTML)</small>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-item-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="info-item-text">
+            <strong>Ubicación</strong>
+            <span>Salamanca, IV Región de Coquimbo, Chile</span>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-item-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </div>
+          <div class="info-item-text">
+            <strong>Instagram</strong>
+            <a href="https://instagram.com/multielectronic_salamanca" target="_blank" rel="noopener">@multielectronic_salamanca</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====== FORMULARIO ======
+           OPCIONES DE ENVÍO (elige UNA y borra las demás):
+
+           1) FormSubmit.co (RECOMENDADO - gratis, sin registro):
+              - Cambia TU-EMAIL@DOMINIO.CL en la línea action
+              - Primer envío: te llega un email de confirmación. Haces clic y listo.
+              - Límite: 50 mensajes/mes gratis, después $8/mes.
+              - Documentación: https://formsubmit.co
+
+           2) Web3Forms (alternativa, 250 envíos/mes gratis, sin registro):
+              - Crea cuenta en https://web3forms.com
+              - Copia tu access_key y reemplaza en el campo _next / access_key
+              - Cambia la action a https://api.web3forms.com/submit
+
+           3) Netlify Forms (si publicas en Netlify):
+              - Solo agrega data-netlify="true" y netlify-honeypot="bot-field"
+              - No requiere backend. Panel en Netlify.
+      -->
+      <form class="form-card"
+            action="https://formsubmit.co/TU-EMAIL@DOMINIO.CL"
+            method="POST">
+
+        <!-- FormSubmit config -->
+        <input type="hidden" name="_subject" value="Nuevo contacto desde la web - Multielectronic" />
+        <input type="hidden" name="_captcha" value="true" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_next" value="https://TU-DOMINIO.CL/gracias.html" />
+        <!-- Anti-spam honeypot -->
+        <input type="text" name="_honey" style="display:none" />
+
+        <h3>Solicita tu cotización</h3>
+        <p class="desc">Completa el formulario y te responderemos por email o WhatsApp.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre *</label>
+            <input type="text" id="nombre" name="Nombre" required placeholder="Tu nombre" />
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="Teléfono" placeholder="+56 9 ..." />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="Email" required placeholder="tu@email.cl" />
+        </div>
+
+        <div class="form-group">
+          <label for="servicio">¿Qué necesitas?</label>
+          <select id="servicio" name="Servicio">
+            <option value="">— Selecciona un servicio —</option>
+            <option>Tecnología / Equipos</option>
+            <option>Cámaras de seguridad</option>
+            <option>Aire acondicionado</option>
+            <option>Servicio técnico</option>
+            <option>Tintas e impresión</option>
+            <option>Otro / Consulta general</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje *</label>
+          <textarea id="mensaje" name="Mensaje" required placeholder="Cuéntanos qué necesitas, dónde es y para cuándo..."></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">Enviar mensaje</button>
+        <p class="form-note">🔒 Tus datos solo se usan para responder tu consulta. No los compartimos.</p>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="logo.jpg" alt="Multielectronic" />
+            <strong>Multielectronic Salamanca</strong>
+          </div>
+          <p style="font-size:0.9rem; max-width: 320px;">Soluciones en tecnología, seguridad y climatización para hogares y empresas en Salamanca y la IV Región.</p>
+        </div>
+        <div>
+          <h5>Servicios</h5>
+          <ul>
+            <li><a href="#servicios">Tecnología</a></li>
+            <li><a href="#servicios">Cámaras de seguridad</a></li>
+            <li><a href="#servicios">Aire acondicionado</a></li>
+            <li><a href="#servicios">Servicio técnico</a></li>
+            <li><a href="#servicios">Tintas e impresión</a></li>
+            <li><a href="#trabajos">Ver trabajos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Empresa</h5>
+          <ul>
+            <li><a href="#nosotros">Sobre nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="https://instagram.com/multielectronic_salamanca" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://wa.me/56931053539" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contacto</h5>
+          <ul>
+            <li>📍 Salamanca, IV Región</li>
+            <li>📱 +56 9 3105 3539</li>
+            <li>✉ contacto@multielectronic.cl</li>
+            <li>🕐 Lun-Vie 9:00-19:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © <span id="year"></span> Multielectronic Salamanca · Todos los derechos reservados
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Flotante -->
+  <a class="wsp-float"
+     href="https://wa.me/56931053539?text=Hola%2C%20necesito%20una%20cotizaci%C3%B3n"
+     target="_blank"
+     rel="noopener"
+     aria-label="Escribir por WhatsApp">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    // Año automático en el footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menú móvil
+    const toggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('nav');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+  </script>
+</body>
+</html>

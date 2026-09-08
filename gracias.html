@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¡Gracias por tu mensaje! · Multielectronic Salamanca</title>
+  <meta name="robots" content="noindex" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0F0F0F 0%, #1F1F1F 100%);
+      color: #fff;
+      padding: 1.5rem;
+    }
+    .card {
+      max-width: 480px;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .icon {
+      width: 80px;
+      height: 80px;
+      background: #7AC11F;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      animation: pop 0.5s ease-out;
+    }
+    @keyframes pop {
+      0% { transform: scale(0); }
+      80% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    h1 { font-size: 1.8rem; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+    p { color: #aaa; margin-bottom: 2rem; line-height: 1.6; }
+    .actions { display: flex; flex-direction: column; gap: 0.75rem; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .btn-primary { background: #7AC11F; color: #fff; }
+    .btn-primary:hover { background: #5A9A14; transform: translateY(-2px); }
+    .btn-wsp { background: #25D366; color: #fff; }
+    .btn-wsp:hover { background: #1DA851; transform: translateY(-2px); }
+    .btn-secondary { background: transparent; color: #fff; border: 1px solid #444; }
+    .btn-secondary:hover { background: #2a2a2a; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+    <h1>¡Mensaje enviado!</h1>
+    <p>Recibimos tu consulta. Te responderemos al correo o teléfono que nos dejaste en menos de 24 horas hábiles.</p>
+    <div class="actions">
+      <a href="https://wa.me/56931053539?text=Hola%2C%20acabo%20de%20enviar%20un%20mensaje%20desde%20la%20web" class="btn btn-wsp">
+        💬 Escríbenos por WhatsApp
+      </a>
+      <a href="index.html" class="btn btn-primary">← Volver al inicio</a>
+    </div>
+  </div>
+</body>
+</html>
